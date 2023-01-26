@@ -1,4 +1,4 @@
-let count = 0
+let count = 0;
 
 let tours = [
   {
@@ -68,12 +68,10 @@ let tours = [
 
 const toursID = document.getElementById("tours");
 
-const starsID = document.getElementById('stars')
-
+const starsID = document.getElementById("stars");
 
 // function renderStars(id) {
 
- 
 //   const tur = tours.find((t) => {
 //     return t.id === id
 //   })
@@ -93,9 +91,9 @@ const starsID = document.getElementById('stars')
 // }
 
 function renderTours() {
-  toursID.innerHTML = ""
-  tours.forEach(tour => {
-  toursID.innerHTML += `
+  toursID.innerHTML = "";
+  tours.forEach((tour) => {
+    toursID.innerHTML += `
     <div class="bg-white rounded-lg overflow-hidden border border-solid border-gray-300 p-3 drop-shadow">
       <img class="h-96 w-full object-cover" src="${tour.image}">
       <div id="stars" class="py-2">${tour.stars} звезды</div>
@@ -116,10 +114,9 @@ function renderTours() {
         </div>
       </div>
     </div>
-    `
+    `;
   });
 }
 
-
-renderTours()
+renderTours();
 // renderStars()
