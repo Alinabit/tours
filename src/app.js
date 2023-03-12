@@ -40,6 +40,7 @@ async function loadTours() {
   return data;
 }
 
+
 function renderTours(tours) {
   toursID.innerHTML = "";
   tours.forEach((tour) => {
@@ -82,9 +83,44 @@ function renderTours(tours) {
   });
 }
 
+const countries = document.getElementById('select')
+
+function filtredCountry(tours, country) {
+  if (country) {
+  const filtredTours = tours.filter((tour) => {
+    return tour.country === countries.value
+  })
+  renderTours(filtredTours)
+} else {
+  renderTours(tours)
+}
+}
+
+function sortLowPrice (tours) {
+  tours.sort(function (min, max) {
+    return parseFloat(max.price) - parseFloat(min.price)
+  })
+
+renderTours(tours)
+}
+
+function sortHeightPrice (tours) {
+  tours.sort(function (min, max) {
+    return parseFloat(min.price) - parseFloat(max.price)
+  })
+
+renderTours(tours)
+}
+
 async function init() {
   const tours = await loadTours();
   renderTours(tours);
+
+  document.getElementById('find').addEventListener('click', () => filtredCountry(tours, countries.value))
+  document.getElementById('hight-price').addEventListener('change', () => sortLowPrice(tours, "По убыванию"))
+  document.getElementById('low-price').addEventListener('change', () => sortHeightPrice(tours, "По возрастанию"))
 }
+
+
 
 init();

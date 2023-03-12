@@ -14,7 +14,7 @@
   </head>
   <body class="bg-gray-100 scr font-family:'Jost'">
     <header
-      class="max-w-6xl mx-auto sm:px-12 pb-5 sm:pb-11 sm:flex header-desk flex-col xl:flex-row px-1 sm:bg-gray-100 sm:h-full">
+      class="max-w-6xl mx-auto  pb-5 sm:pb-11 sm:flex header-desk flex-col xl:flex-row px-1 sm:bg-gray-100 sm:h-full">
       <div
         class="flex w-full lg:justify-between flex-col sm:flex-row sm:h-auto">
         <div class="flex flex-row relative">
@@ -93,10 +93,45 @@
         </div>
       </div>
     </header>
+    <div class="flex flex-col  bg-cyan-100 max-w-6xl mx-auto justify-center items-center py-9 gap-2 sm:gap-0">
+    <div class="flex flex-row flex-wrap bg-cyan-100 max-w-6xl mx-auto justify-center items-center gap-3 sm:gap-0">
+      <div>
+        <select class="p-2 outline-none h-12 text-lg border-gray-400 text-gray-400 focus-within:text-black border-solid border-2" id="select" name="country">
+          <option id="all" value="">Все страны</option>
+          <option id="maldives" value="Мальдивы">Мальдивы</option>
+          <option id="indonesia" value="Индонезия">Индонезия</option>
+          <option id="thailand" value="Тайланд">Тайланд</option>
+          <option id="egypt" value="Египет">Египет</option>
+          <option id="cyprus" value="Кипр">Кипр</option>
+          <option id="tanzania"value="Танзания">Танзания</option>
+          <option id="mexico" value="Мексика">Мексика</option>
+      </select>
+      </div>
+      <div>
+        <select class="p-2 mx-5 outline-none h-12 text-lg border-gray-400 text-gray-400 hover:text-black border-solid border-2" id="select" name="country">
+          <option id="sorting-select" value="">Сортировка по цене</option>
+          <option id="low-price" value="">По убыванию</option>
+          <option id="hight-price" value="">По возрастанию</option>
+        </select>
+      </div>
+      <div>
+        <select class="p-2 outline-none h-12 text-lg border-gray-400 text-gray-400 hover:text-black border-solid border-2" id="select" name="country">
+          <option id="all" value="0">Рейтинг отеля</option>
+          <option id="rate-7" value="7">от 7</option>
+          <option id="rate-8" value="8">от 8</option>
+          <option id="rate-9" value="9">от 9</option>
+      </select>
+      </div>
+      <div class="ml-5">
+        <button id="find" class="border-solid border-2 border-gray-400 h-12 px-3 text-white rounded bg-[#22b499] text-xl text-center">Найти</button>
+      </div>
+    </div>
+  </div>
+
     <h1 class="text-center font-bold sm:text-4xl text-2xl my-8 px-2">
       Горящие туры из Москвы
     </h1>
-    <div class="max-w-6xl mx-auto sm:px-12 px-4 pb-11" id="container">
+    <div class="max-w-6xl mx-auto px-4 sm:px-0 pb-11" id="container">
       <div
         class="mt-12 gap-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
         id="tours"

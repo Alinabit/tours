@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body.noscroll {
-  overflow: hidden;
-}
-
 .open {
   display: flex;
 }
@@ -13,3 +9,12 @@ body.noscroll {
 .hidden {
   display: none;
 }
+
+.lbr {
+  border-radius: 4px 0 0 4px;
+}
+
+.rbr {
+  border-radius: 0 4px 4px 0;
+}
+
